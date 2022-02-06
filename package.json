@@ -1,0 +1,28 @@
+{
+    "name": "toto",
+    "version": "1.0.0",
+    "description": "",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {
+        "start": "nodemon ./server.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "express-jwt": "^6.0.0",
+        "jsonwebtoken": "^8.4.0",
+        "pg": "^8.7.3",
+        "pg-hstore": "^2.3.4",
+        "rootpath": "^0.1.2",
+        "sequelize": "^6.15.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4",
+        "sequelize-cli": "^6.4.1"
+    }
+}
