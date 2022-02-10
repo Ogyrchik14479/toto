@@ -3,21 +3,12 @@ const router = express.Router();
 const userService = require('../servicies/user.service');
 const authorize = require('helpers/authorize')
 const Role = require('helpers/role');
-const User = require("../models/user")
+const User = require("../db/models/user")
 
 router.post('/authenticate', authenticate);
 router.post('/', create);
 router.get('/', authorize(Role.Admin), getAll);
-// router.get('/test', (req, res) => {
-//     User.findAll()
-//         .then(user => {
-//             res.json(user)
-//         })
-//         .catch(error => {
-//             console.log(error);
-//             res.status(500).send(error);
-//         })
-// })
+
 router.get('/:id', authorize(), getById);
 
 module.exports = router;

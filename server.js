@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const errorHandler = require('helpers/error-handler');
-const doInit = require("./models/init");
+const doInit = require("./db/models/init");
 
 const app = express();
 const port = process.env.NODE_ENV === 'production' ? 80 : 4000;

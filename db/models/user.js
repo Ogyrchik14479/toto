@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize')
-const sequelize = new Sequelize('postgres://postgres:postgres@localhost:5432/toto')
+const sequelizeConnections = require('../db.connection')
 
-const User = sequelize.define(
+const User = sequelizeConnections.define(
     'User',
     {
         username: {
@@ -21,10 +21,14 @@ const User = sequelize.define(
             type: DataTypes.STRING,
         },
         role: {
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM,
+            values: ['User', 'Admin'],
             defaultValue: 'User',
         },
-    },
+    }, {
+        tableName: 'users',
+        timestamps: false, //отключетает генерацию временных меток createdAt и updatedAt
+    }
 )
 
 module.exports = User
